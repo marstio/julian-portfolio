@@ -10,7 +10,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://julianramirez.dev";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://julianramirez.site";
 const siteImageUrl = `${siteUrl.replace(/\/$/, "")}/opengraph-image`;
 const siteName = "Julian Gabriel Ramirez";
 const siteDescription =
