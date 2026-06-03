@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { SiTiktok, SiInstagram, SiGithub, SiLinkedin } from "react-icons/si";
+import { SiTiktok, SiInstagram, SiGithub } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6";
 
 export default function Dock() {
   // Base style for all icons: Bigger size (w-8/h-8 to w-10/h-10) & Smooth transition
@@ -42,7 +43,7 @@ export default function Dock() {
         rel="noopener noreferrer"
         className="group"
       >
-        <SiLinkedin
+        <FaLinkedin
           className={`${baseClass} ${hoverScale} hover:text-[#0077b5] dark:hover:text-[#0077b5]`}
         />
       </a>
