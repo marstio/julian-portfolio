@@ -242,7 +242,16 @@ export default function Home() {
                     );
                   })()}
                   // 2. Replaced `h-auto` with `aspect-video`, and added a hover scale!
-                  className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  className={`w-full aspect-video object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${
+                    projectId === "dlsu-workshop" &&
+                    (img.endsWith("/dlsu.jpg") ||
+                      img.endsWith("/dlsu3.jpg") ||
+                      img.endsWith("/dlsu4.jpg"))
+                      ? "object-[50%_70%]"
+                      : projectId === "dlsu-workshop"
+                        ? "object-bottom"
+                        : ""
+                  }`}
                 />
               </div>
             ))}
@@ -706,22 +715,6 @@ export default function Home() {
                 ])}
               </div>
 
-              {/* FoodLoop PH */}
-              <div className="border-t border-gray-300 dark:border-white/10 pt-4">
-                <h2 className="text-xl font-bold">FoodLoop PH</h2>
-                <p className="text-amber-500 font-mono text-xs mt-1">
-                  Startup MVP
-                </p>
-                <p className="opacity-90 mt-2 text-sm leading-relaxed">
-                  A marketplace platform designed to rescue surplus food from
-                  restaurants, applying lean canvas business models.
-                </p>
-                {renderCommandToggle("foodloop")}
-                {renderProjectAssets("foodloop", [
-                  "https://placehold.co/600x400/1e293b/ffffff?text=FoodLoop+App+UI",
-                ])}
-              </div>
-
               {/* Victimatch */}
               <div className="border-t border-gray-300 dark:border-white/10 pt-4">
                 <h2 className="text-xl font-bold">Victimatch</h2>
@@ -760,6 +753,46 @@ export default function Home() {
                 ])}
               </div>
 
+              {/* DLSU Data Science Workshop */}
+              <div className="border-t border-gray-300 dark:border-white/10 pt-4">
+                <h2 className="text-xl font-bold">
+                  Data Science Workshop @ DLSU
+                </h2>
+                <p className="text-amber-500 font-mono text-xs mt-1">
+                  Masterclass / Python / SQL / Tableau / Excel
+                </p>
+                <div className="opacity-90 mt-3 text-sm leading-relaxed space-y-4 text-justify">
+                  <p>
+                    I attended an intensive, four-session data science workshop
+                    hosted at De La Salle University. The program was led by Dr.
+                    Jennifer Widom, the Dean of Engineering at Stanford
+                    University, as part of her international instructional
+                    series.
+                  </p>
+                  <p>
+                    The curriculum was entirely hands-on, focusing on practical
+                    data manipulation and analysis. Across the sessions, we
+                    worked directly with core data tools, covering advanced
+                    spreadsheet analysis in Excel, database querying with SQL,
+                    statistical data testing in Python, and building interactive
+                    visualization dashboards using Tableau.
+                  </p>
+                  <p>
+                    I am incredibly thankful for this experience. Having the
+                    opportunity to learn these core data principles directly
+                    under a Stanford professor alongside fellow student
+                    developers was both highly challenging and deeply rewarding.
+                  </p>
+                </div>
+                {renderCommandToggle("dlsu-workshop")}
+                {renderProjectAssets("dlsu-workshop", [
+                  "/images/projects/dlsu.jpg",
+                  "/images/projects/dlsu2.jpg",
+                  "/images/projects/dlsu3.jpg",
+                  "/images/projects/dlsu4.jpg",
+                ])}
+              </div>
+
               {/* School Organization Works */}
               <div className="border-t border-gray-300 dark:border-white/10 pt-4">
                 <h2 className="text-xl font-bold">School Organization Works</h2>
@@ -776,6 +809,22 @@ export default function Home() {
                   "/images/projects/savesierramadre.jpg",
                   "/images/projects/jointomasinoweb.jpg",
                   "/images/projects/AngatBuhay.png",
+                ])}
+              </div>
+
+              {/* FoodLoop PH */}
+              <div className="border-t border-gray-300 dark:border-white/10 pt-4">
+                <h2 className="text-xl font-bold">FoodLoop PH</h2>
+                <p className="text-amber-500 font-mono text-xs mt-1">
+                  Startup MVP
+                </p>
+                <p className="opacity-90 mt-2 text-sm leading-relaxed">
+                  A marketplace platform designed to rescue surplus food from
+                  restaurants, applying lean canvas business models.
+                </p>
+                {renderCommandToggle("foodloop")}
+                {renderProjectAssets("foodloop", [
+                  "https://placehold.co/600x400/1e293b/ffffff?text=FoodLoop+App+UI",
                 ])}
               </div>
 
