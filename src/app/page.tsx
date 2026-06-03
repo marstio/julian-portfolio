@@ -453,8 +453,8 @@ export default function Home() {
                 <div className="w-full md:w-1/3 flex-shrink-0">
                   <ImageCarousel
                     images={[
-                      "/images/aboutme/bar.jpg",
-                      "/images/aboutme/sun.jpg",
+                      "/images/aboutme/bar.JPG",
+                      "/images/aboutme/sun.JPG",
                     ]}
                   />
                 </div>
@@ -570,7 +570,7 @@ export default function Home() {
                     title="kt_dashboard_v1.png"
                   />
                   <ImageAttachmentBadge
-                    src="/images/experience/interns.jpg"
+                    src="/images/experience/interns.JPG"
                     title="amdocs_interns.png"
                   />
                 </div>
@@ -624,7 +624,7 @@ export default function Home() {
                 </ul>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <ImageAttachmentBadge
-                    src="/images/experience/assem.jpeg"
+                    src="/images/experience/assem.JPEG"
                     title="css_assembly_2025.png"
                   />
                 </div>
@@ -708,7 +708,7 @@ export default function Home() {
                 </div>
                 {renderCommandToggle("thesis")}
                 {renderProjectAssets("thesis", [
-                  "/images/projects/best-thesis.jpg",
+                  "/images/projects/best-thesis.JPG",
                   "/images/projects/thesis-dashboard.png",
                   "/images/projects/bastemayor.png",
                   "/images/projects/ustt.jpg",
@@ -824,7 +824,7 @@ export default function Home() {
                 </p>
                 {renderCommandToggle("foodloop")}
                 {renderProjectAssets("foodloop", [
-                  "https://placehold.co/600x400/1e293b/ffffff?text=FoodLoop+App+UI",
+                  "/images/projects/FoodLoop-MVP.png",
                 ])}
               </div>
 
@@ -841,7 +841,8 @@ export default function Home() {
                 </p>
                 {renderCommandToggle("java2d")}
                 {renderProjectAssets("java2d", [
-                  "https://placehold.co/600x400/1e293b/ffffff?text=Java+Output+Window",
+                  "/images/projects/java2d1.JPEG",
+                  "/images/projects/java2d2.png",
                 ])}
               </div>
             </div>
