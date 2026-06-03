@@ -10,7 +10,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://julianramirez.dev";
+const siteImageUrl = `${siteUrl.replace(/\/$/, "")}/opengraph-image`;
 const siteName = "Julian Gabriel Ramirez";
 const siteDescription =
   "Portfolio of Julian Gabriel Ramirez, a Computer Science student and developer focused on data science, web apps, and research.";
@@ -45,10 +46,11 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `${siteUrl}/opengraph-image`,
+        url: siteImageUrl,
         width: 1200,
         height: 630,
         alt: `${siteName} — Portfolio`,
+        type: "image/png",
       },
     ],
   },
@@ -56,6 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteName} | Portfolio`,
     description: siteDescription,
+    images: [siteImageUrl],
   },
   icons: {
     icon: "/favicon.ico",
