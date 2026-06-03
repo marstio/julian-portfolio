@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://julianramirez.site";
-const siteImageUrl = `${siteUrl.replace(/\/$/, "")}/opengraph-image`;
+const siteImageUrl = `${siteUrl.replace(/\/$/, "")}/images/aboutme/Featured2.png`;
 const siteName = "Julian Gabriel Ramirez";
 const siteDescription =
   "Portfolio of Julian Gabriel Ramirez, a Computer Science student and developer focused on data science, web apps, and research.";
@@ -37,19 +37,17 @@ export const metadata: Metadata = {
   creator: siteName,
   applicationName: siteName,
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
   },
   openGraph: {
     type: "website",
-    url: "/",
+    url: siteUrl,
     siteName,
     title: `${siteName} | Portfolio`,
     description: siteDescription,
     images: [
       {
         url: siteImageUrl,
-        width: 1200,
-        height: 630,
         alt: `${siteName} — Portfolio`,
         type: "image/png",
       },

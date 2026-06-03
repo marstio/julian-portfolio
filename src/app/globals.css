@@ -119,6 +119,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* NEW: Hide ugly alt text while images are blurring in */
+  img {
+    @apply text-transparent;
+  }
 }
 
 /* Basic reset/base styles for the sky effect */

@@ -21,8 +21,14 @@ import DaySkyElements from "../components/day-sky-elements";
 import Dock from "../components/dock";
 import DraggableWindow from "../components/draggable-window";
 import { useSound } from "../components/sound-provider";
+const blurDataUrl =
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNlMmU4ZjAiLz48L3N2Zz4=";
 
 // A simple auto-playing carousel component
+import Image from "next/image";
+
+// A tiny inline 8x8 pixel grey/blue gradient that acts as the instant CSS placeholder
+
 const ImageCarousel = ({ images }: { images: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -34,18 +40,25 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
   }, [images.length]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-lg border border-gray-300 dark:border-white/10 shadow-sm group min-h-[150px] md:min-h-0">
+    <div className="relative w-full h-full overflow-hidden rounded-lg border border-gray-300 dark:border-white/10 shadow-sm group min-h-[150px] md:min-h-0 aspect-video">
       {images.map((src, index) => (
-        <img
+        <div
           key={src}
-          src={src}
-          alt={(src.split("/").pop() || `slide-${index}`)
-            .replace(/[-_]/g, " ")
-            .replace(/\.[a-zA-Z0-9]+$/, "")}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+          className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
             index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
-        />
+        >
+          <Image
+            src={src}
+            alt="Carousel slide"
+            fill
+            priority={index === 0} // Instantly pre-loads ONLY the first image of the carousel
+            placeholder="blur"
+            blurDataURL={blurDataUrl}
+            sizes="(max-width: 768px) 100vw, 300px"
+            className="object-cover"
+          />
+        </div>
       ))}
       <div className="absolute bottom-2 left-0 right-0 z-20 flex justify-center gap-1.5">
         {images.map((_, idx) => (
@@ -211,7 +224,7 @@ export default function Home() {
     </button>
   );
 
-  // NEW: Helper function to render the expandable image grid
+  // Helper function to render the expandable image grid
   const renderProjectAssets = (projectId: string, images: string[]) => (
     <AnimatePresence>
       {expandedProject === projectId && (
@@ -224,26 +237,18 @@ export default function Home() {
         >
           <div className="mt-3 p-3 bg-black/5 dark:bg-black/40 border border-gray-300 dark:border-white/10 rounded-md grid grid-cols-1 sm:grid-cols-2 gap-3">
             {images.map((img, idx) => (
-              // 1. Added a wrapper div to contain the hover zoom effect
               <div
                 key={idx}
-                className="overflow-hidden rounded border border-gray-300 dark:border-white/10 shadow-sm bg-gray-200 dark:bg-slate-800"
+                className="relative overflow-hidden rounded border border-gray-300 dark:border-white/10 shadow-sm bg-gray-200 dark:bg-slate-800 aspect-video"
               >
-                <img
+                <Image
                   src={img}
-                  alt={(() => {
-                    const filename =
-                      img.split("/").pop() || "asset-" + (idx + 1);
-                    return (
-                      projectId +
-                      " — " +
-                      filename
-                        .replace(/[-_]/g, " ")
-                        .replace(/\.[a-zA-Z0-9]+$/, "")
-                    );
-                  })()}
-                  // 2. Replaced `h-auto` with `aspect-video`, and added a hover scale!
-                  className={`w-full aspect-video object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${
+                  alt={`Project asset ${idx + 1}`}
+                  fill
+                  placeholder="blur"
+                  blurDataURL={blurDataUrl}
+                  sizes="(max-width: 640px) 100vw, 400px"
+                  className={`object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${
                     projectId === "dlsu-workshop" &&
                     (img.endsWith("/dlsu.jpg") ||
                       img.endsWith("/dlsu3.jpg") ||
