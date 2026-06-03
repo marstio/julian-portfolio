@@ -373,23 +373,25 @@ export default function Home() {
                     <GraduationCap className="w-6 h-6 text-sky-500" />
                     Academic Journey
                   </h3>
-                  <p className="opacity-90 leading-relaxed text-sm">
-                    I recently graduated from the University of Santo Tomas with
-                    a degree in Computer Science, specializing in Data Science.
-                    My journey so far has been driven by a simple goal: using
-                    data to solve real-world problems. For my thesis, I focused
-                    on mitigating{" "}
-                    <span className="text-sky-500 dark:text-sky-400 font-medium">
-                      spatial bias in flood risk prediction models
-                    </span>{" "}
-                    for the Philippines, which is a challenging but incredibly
-                    rewarding space where spatial analysis can make a tangible
-                    difference. Now that the defense is behind me, my team and I
-                    are working on getting the research officially published.
-                    Looking ahead, I’m excited to keep growing and am actively
-                    considering a Master's degree to dive even deeper into data
-                    science.
-                  </p>
+                  <div className="opacity-90 leading-relaxed text-sm text-gray-700 dark:text-gray-300 space-y-2 text-justify">
+                    <p>
+                      I recently graduated from the University of Santo Tomas in
+                      Computer Science, specializing in Data Science. Aiming to
+                      solve real-world problems, my thesis focused on mitigating{" "}
+                      <span className="text-sky-500 dark:text-sky-400 font-medium">
+                        spatial bias in flood risk prediction models
+                      </span>{" "}
+                      for the Philippines, and our team is currently working on
+                      getting it published.
+                    </p>
+                    <p>
+                      I genuinely love this field for the challenge of building
+                      things from scratch and solving tricky problems to create
+                      functional software. Looking ahead, I am considering a
+                      Master's degree to dive deeper into the complex algorithms
+                      and computing principles behind it all.
+                    </p>
+                  </div>
                 </div>
               </section>
 
@@ -410,24 +412,26 @@ export default function Home() {
                     <Code2 className="w-6 h-6 text-amber-500" />
                     Tech & Projects
                   </h3>
-                  <p className="opacity-90 leading-relaxed text-sm mb-3">
+                  <p className="opacity-90 leading-relaxed text-sm mb-3 text-gray-700 dark:text-gray-300">
                     I spend most of my time building full-stack web apps and
                     wrangling data. My go-to tools are{" "}
                     <span className="text-amber-500 font-medium">
                       Next.js, React, and TypeScript.
                     </span>
                   </p>
-                  <ul className="list-disc ml-4 space-y-1 opacity-90 text-sm">
+                  <ul className="list-disc ml-4 space-y-1 opacity-90 text-sm text-gray-700 dark:text-gray-300">
                     <li>
-                      Currently interning as a Software Engineer at Amdocs.
+                      Completed a Software Engineering internship at{" "}
+                      <strong>Amdocs</strong>.
                     </li>
                     <li>
                       Building <strong>Commit</strong>, a developer-focused
                       habit tracker.
                     </li>
                     <li>
-                      Developing the MVP for <strong>FoodLoop PH</strong> to
-                      combat food waste.
+                      Leading frontend development for the{" "}
+                      <strong>Angat Bayanihan Volunteer Network (ABVN)</strong>{" "}
+                      microsite.
                     </li>
                   </ul>
                 </div>
@@ -450,15 +454,24 @@ export default function Home() {
                     <Gamepad2 className="w-6 h-6 text-emerald-500" />
                     Off the Keyboard
                   </h3>
-                  <p className="opacity-90 leading-relaxed text-sm">
-                    When I finally close my IDE, I'm probably catching up on{" "}
-                    <em>Frieren</em> or <em>Blue Lock</em>, watching Game
-                    Theory, or playing <em>Valorant</em> and{" "}
+                  <p className="opacity-90 leading-relaxed text-sm text-gray-700 dark:text-gray-300">
+                    Outside of coding, I'm usually catching up on{" "}
                     <span className="text-emerald-600 dark:text-emerald-400 font-medium">
-                      Final Fantasy
+                      Frieren
+                    </span>{" "}
+                    or{" "}
+                    <span className="text-emerald-600 dark:text-emerald-400 font-medium">
+                      Blue Lock
                     </span>
-                    . If I'm heading out, you'll usually catch me in oversized
-                    cargo pants and a Chiikawa graphic tee.
+                    , diving into titles like{" "}
+                    <span className="text-emerald-600 dark:text-emerald-400 font-medium">
+                      Until Then
+                    </span>
+                    ,<em> FNAF</em>, and <em>TETR.IO</em>, or watching
+                    basketball court and hitting the football field. I also have
+                    a passion for constantly maxing out my "life stats" by
+                    picking up new skills, whether that's learning Blender,
+                    studying music theory, or building out my home lab.
                   </p>
                 </div>
               </section>
@@ -478,6 +491,18 @@ export default function Home() {
                   <li>
                     That's it for now, there are some more projects I'm working
                     on in the background that I'll release soon :)
+                  </li>
+                  <li>
+                    The dog chibi on the bottom left was commissioned from{" "}
+                    <a
+                      href="https://x.com/082507v"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-500 dark:text-sky-400 font-medium hover:underline"
+                    >
+                      Losea (@082507v)
+                    </a>
+                    .
                   </li>
                 </ul>
                 <p className="mt-4 text-sm opacity-80">
