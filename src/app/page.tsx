@@ -69,6 +69,7 @@ export default function Home() {
     title: string;
   } | null>(null);
   const [emailCopied, setEmailCopied] = useState(false);
+  const [showMobileNotice, setShowMobileNotice] = useState(true);
 
   // NEW: State for tracking which project's inline drawer is open
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
@@ -313,11 +314,38 @@ export default function Home() {
         <WavifyBackground />
       </div>
 
+      {showMobileNotice && (
+        <div className="fixed inset-x-0 bottom-0 z-[80] flex justify-center px-4 pb-4 md:hidden pointer-events-none">
+          <div className="pointer-events-auto w-full max-w-md overflow-hidden rounded-[24px] border border-white/30 bg-white/18 text-slate-100 shadow-[0_18px_60px_rgba(15,23,42,0.28)] backdrop-blur-3xl">
+            <div className="h-1 bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+            <div className="flex items-start gap-4 px-5 py-4">
+              <div className="min-w-0 flex-1">
+                <p className="text-base font-semibold tracking-tight text-white sm:text-lg">
+                  Quick Heads-Up!
+                </p>
+                <p className="mt-1 text-[13px] leading-snug tracking-[-0.01em] text-slate-200/82">
+                  this portfolio is built with a desktop-style layout in mind,
+                  so a few bits may feel a little tighter here.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setShowMobileNotice(false)}
+                className="shrink-0 rounded-full border border-white/20 bg-white/14 px-4 py-2 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white/24"
+              >
+                alrighty
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <button
         type="button"
         onMouseEnter={handleMascotHover}
         aria-label="Chokee mascot"
-        className="group fixed bottom-4 left-4 z-40 flex items-end justify-start focus:outline-none"
+        className="group fixed bottom-4 left-4 z-40 hidden items-end justify-start focus:outline-none sm:flex"
       >
         <motion.img
           src="/images/chokee3.png"
