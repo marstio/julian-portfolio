@@ -325,10 +325,10 @@ export default function Home() {
             <div className="h-1 bg-gradient-to-r from-transparent via-white/35 to-transparent" />
             <div className="flex items-start gap-4 px-5 py-4">
               <div className="min-w-0 flex-1">
-                <p className="text-base font-semibold tracking-tight text-white sm:text-lg">
+                <p className="text-base font-semibold tracking-tight text-slate-800 dark:text-white sm:text-lg">
                   Quick Heads-Up!
                 </p>
-                <p className="mt-1 text-[13px] leading-snug tracking-[-0.01em] text-slate-200/82">
+                <p className="mt-1 text-[13px] leading-snug tracking-[-0.01em] text-slate-600 dark:text-slate-200/82">
                   this portfolio is built with a desktop-style layout in mind,
                   so a few bits may feel a little tighter here.
                 </p>
@@ -337,7 +337,16 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setShowMobileNotice(false)}
-                className="shrink-0 rounded-full border border-white/20 bg-white/14 px-4 py-2 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white/24"
+                className="
+                    shrink-0 rounded-full
+                    border border-slate-300/60
+                    bg-white/70
+                    px-4 py-2 text-sm font-semibold
+                    text-slate-700
+                    transition-all
+                    hover:-translate-y-0.5 hover:bg-white/90
+                    dark:border-white/24 dark:bg-white/14 dark:text-white
+                  "
               >
                 alrighty
               </button>
