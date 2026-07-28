@@ -36,3 +36,5 @@ yarn-error.log*
 
 # ts cache
 *.tsbuildinfo
+
+handoff.md
